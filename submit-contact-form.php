@@ -9,11 +9,10 @@ require('config.php');
             $lname = $_POST['lname'];
             $message = $_POST['message'];
             $query = mysqli_query($conn, "insert into feedback(firstName,lastName,reader_message) values('$fname','$lname','$message')");
-            if($query){
-                echo "feedback sent successfully";
-            }else{
+            if(!$query){
                 echo "feedback not sent!!";
+            }else{
+                echo "feedback sent !";
             }
         }
-    }
-    ?>
+} ?> 
