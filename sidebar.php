@@ -4,7 +4,7 @@
         <ul>
             <li>
                     <form action="searchResults.php" method = "POST">
-                        <input type="search" name="search" id="sidebar-search" placeholder="Search By Author..."><br><br>
+                        <input required type="search" name="search" id="sidebar-search" placeholder="Search By Author..."><br><br>
                         <input type="submit" value="Search" name="sidebar-submit" id="submit">
                     </form>
             </li>

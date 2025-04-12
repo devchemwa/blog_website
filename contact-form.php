@@ -1,5 +1,5 @@
 <div class="form">
-    <form action="submit-contact-form.php" method = POST>
+    <form action="submit.php" method = POST>
         <input type="text" placeholder="First Name" id = "fname" name = "fname" required><br><br>
         <input type="text" placeholder = "Last Name"  id = "lname" name = "lname" required><br><br>
         <input type="email" placeholder = "Email"  id = "email" name = "email" required><br><br>
