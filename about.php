@@ -4,7 +4,9 @@
 <body>
 <div class="container">
   <?php include('navbar.php'); ?>
+  <div class="blog-details">
   <?php include('blog-about.php'); ?>
+  </div>
   <div class="footer-container">
   <?php include('footer.php'); ?>
   </div>
