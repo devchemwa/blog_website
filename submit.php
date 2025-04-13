@@ -7,12 +7,15 @@ require('config.php');
         if(isset($_POST['submit'])){
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
+            $email = $_POST['email'];
             $message = $_POST['message'];
-            $query = mysqli_query($conn, "insert into feedback(firstName,lastName,reader_message) values('$fname','$lname','$message')");
+            $query = mysqli_query($conn, "insert into feedback(firstName,lastName, email, reader_message) values('$fname','$lname','$email','$message')");
             if(!$query){
                 echo "feedback not sent!!";
             }else{
-                echo "feedback sent !";
+                $url = 'http://localhost/blog_website/post.php';
+                header(header: 'Location: ' . $url);
+                die();
             }
         }
 } ?> 
