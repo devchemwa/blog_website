@@ -19,9 +19,9 @@
          $sql =" insert into blog(title,author,content) VALUES('$title','$author','$content')";
          if($sql){
          mysqli_query($conn, $sql);
-         mysqli_close($conn);
          $url = 'http://localhost/blog_website/post.php';
          header("Location: " . $url);
          die();
          }
-        }
+        }         
+mysqli_close($conn);
