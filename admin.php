@@ -9,7 +9,7 @@
         <aside>
             <ul>
                 <li><a href="#">Contacts</a></li>
-                <li><a href="#">New Blog Post</a></li>
+                <li><a href="#new-post">New Blog Post</a></li>
                 <li><a href="#">Manage Blogs</a></li>
             </ul>
         </aside>
