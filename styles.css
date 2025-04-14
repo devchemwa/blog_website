@@ -196,17 +196,16 @@ form input:hover{
 }
 .admin-sidebar{
     display: inline;
+    float: left;
     height: fit-content;
     width: fit-content;
 }
-.admin-sidebar ul li{
+.admin-sidebar ul li, .admin-sidebar ul li a{
     list-style: none;
-    float: left;
+    text-decoration: none;
 }
 .panel{
     display: inline;
     float: right;
     margin: 0 auto;
-    height: fit-content;
-    width: fit-content;
 }

@@ -30,7 +30,6 @@
                 <p><?=$blog['content'];?></p>
                 <p><?=$blog['created_at'];?></p>
             </div>
-
        <?php } ?>
         </div>
     </div>
