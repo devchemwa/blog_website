@@ -10,7 +10,7 @@
                 <input type="text" name="title" id="title" placeholder="Blog Title" required><br><br>
                 <input type="text" name="author" id="author" placeholder="Author Name" required><br><br>
                 <input type="text" name="content" id="content" placeholder="Blog Content" required><br><br>
-                <input type="submit" value="Publish Blog">
+                <input type="submit" name="post-submit" id="post-submit" value="Publish Blog">
             </form>
 </div>
 </div>
@@ -25,7 +25,7 @@
          if(!$conn){
             die('Connection Error: ' . mysqli_connect_error());
          }
-         if(isset($_POST['submit'])){
+         if(isset($_POST['post-submit'])){
          $title = htmlspecialchars($_POST['title']);
          $author =htmlspecialchars($_POST['author']);
          $content = htmlspecialchars($_POST['content']);
