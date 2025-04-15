@@ -4,16 +4,29 @@
     if($conn == false){
         print('Connection Error: ' . mysqli_connect_error());
     }else{
-            $query = "select title, author, created_at from blog where blogID > 0;";
+            $query = "select title, author, created_at from blog;";
             $results = mysqli_query(mysql: $conn, query: $query);
-            $blogs = mysqli_fetch_all(result: $results, mode: MYSQLI_ASSOC);
+            $blogs = mysqli_fetch_all(result: $results);
             if($blogs == true){
-            for($i = 0; $i < count(value: $blogs); $i++){ 
-            echo 'BLOG TITLE: ' . $blogs[$i]['title'] . "<br><br>";
-            echo 'BLOG AUTHOR: ' . $blogs[$i]['author'] . "<br><br>";
-            echo  'CREATED AT: ' . $blogs[$i]['created_at'] . "<br><br>";
-         } 
-      } 
-   }
+?>
+<div class="blog-about-container">
+<table border="1">
+   <thead>
+      <th>Blog Title</th>
+      <th>Author</th>
+      <th>Created At</th>
+   </thead>
+   <?php for($i = 0; $i < count(value: $blogs); $i++){  ?>
+   <tbody>
+         <td><?=$blogs[$i][0] ?></td>
+         <td><?=$blogs[$i][1] ?></td>
+         <td><?=$blogs[$i][2] ?></td>
+   </tbody>
+   <?php } ?>
+</table>
+</div>
+<?php         } 
+      }
    mysqli_free_result(result: $results);
    mysqli_close(mysql: $conn);
+?>

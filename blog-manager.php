@@ -2,25 +2,39 @@
 <html lang="en">
 <?php include 'header.php'; ?>
 <body>
-    <?php include 'navbar.php'; ?>
+<?php include 'navbar.php'; ?>  
 <?php
-      require 'config.php';
-      $conn = mysqli_connect($server,$user,$pass,$db_name);
-      if(!$conn){
-        die("Connection Error: " . mysqli_connect_error());
-      }else{
-      $sql = "select * from blog";
-      $result = mysqli_query($conn,$sql);
-      $blog =mysqli_fetch_assoc($result);
+   require 'config.php' ;
+    $conn = mysqli_connect(hostname: $server,username: $user,password: $pass,database: $db_name);
+    if($conn == false){
+        print('Connection Error: ' . mysqli_connect_error());
+    }else{
+            $query = "select title, author, created_at from blog;";
+            $results = mysqli_query(mysql: $conn, query: $query);
+            $blogs = mysqli_fetch_all(result: $results);
+            if($blogs == true){
 ?>
-          <div>
-            <p>Blog Title: <?=$blog['title'];?></p>
-            <p>Blog Author: <?=$blog['author'];?></p>
-            <p>Created At: <?=$blog['created_at']?></p>
-            <input type="submit" value="Delete Blog">
-          </div>
-
-<?php }?>
-    <?php include 'footer.php'; ?>
+<div class="blog-about-container">
+<table border="1">
+   <thead>
+      <th>Blog Title</th>
+      <th>Author</th>
+      <th>Created At</th>
+   </thead>
+   <?php for($i = 0; $i < count(value: $blogs); $i++){  ?>
+   <tbody>
+         <td><?=$blogs[$i][0] ?></td>
+         <td><?=$blogs[$i][1] ?></td>
+         <td><?=$blogs[$i][2] ?></td>
+   </tbody>
+   <?php } ?>
+</table>
+</div>
+<?php         } 
+      }
+   mysqli_free_result(result: $results);
+   mysqli_close(mysql: $conn);
+?>
+<?php include 'footer.php'; ?>
 </body>
 </html>
