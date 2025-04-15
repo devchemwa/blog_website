@@ -22,9 +22,10 @@
                 $sql = 'select title from blog';
                 $result = mysqli_query($conn,$sql);
                 $titles = mysqli_fetch_all($result); 
+                for($i= 0;$i<count($titles);$i++){
             ?>
-            <li><a href="#recent-posts"><?=$titles[0][0];?></a></li>
-            <?php } ?>
+            <li><a href="post.php"><?=$titles[$i][0];?></a></li>
+            <?php } } ?>
         </ul>
     </aside>
 </div>

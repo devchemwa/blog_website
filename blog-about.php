@@ -21,6 +21,8 @@
          <td><?=$blogs[$i][0] ?></td>
          <td><?=$blogs[$i][1] ?></td>
          <td><?=$blogs[$i][2] ?></td>
+         <td colspan="2"><button >Delete Blog</button>
+         <button>Edit Blog</button></td>
    </tbody>
    <?php } ?>
 </table>
