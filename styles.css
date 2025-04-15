@@ -74,7 +74,7 @@ body{
     text-decoration: none;
     color: #000;
 }
-.sidebar aside ul li a:hover{color: #050705; cursor: pointer; font-size: 1.5rem; box-shadow: 1px 1px 1px 1px #000;}
+.sidebar aside ul li a:hover{color: #050705; cursor: pointer; box-shadow: 1px 1px 1px 1px #000;}
 #blog-container-home,#blog-container-post{
     float: right;
     width: 75%;
@@ -82,8 +82,14 @@ body{
     height: fit-content;
 }
 .blog{
+    display: flex;
+    width: fit-content;
+    margin-top: 40px;
     line-height: 35px;
     font-size: 1.4rem;
+}
+.blog-content{
+    justify-content: space-around;
 }
 .blog h3{
     text-align: center;
@@ -107,6 +113,11 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
+}
+.searchResults{
+    margin: 0 auto;
+    margin-top: 50px;
+    line-height: 35px;
 }
 .blog-about-container{
     display: inline;
@@ -135,7 +146,7 @@ body{
     display: inline;
     float: right;
     margin: 0 auto;
-    margin-left: 150px;
+    margin-left: 100px;
     margin-top: 50px;
     justify-content: space-evenly;
 }

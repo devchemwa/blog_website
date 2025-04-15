@@ -9,13 +9,24 @@
                     </form>
             </li>
             <li><h3>Categories</h3></li>
-            <li><a href="#">Personal</a></li>
+            <li><a href="web-dev.php">Web Development</a></li>
             <li><a href="#">Technology</a></li>
             <li><a href="#">Lifestyle</a></li>
             <li><h3>Recent Posts</h3></li>
-            <li><a href="#recent-posts">Blog Post 1</a></li>
-            <li><a href="#recent-posts">Blog Post 2</a></li>
-            <li><a href="#recent-posts">Blog Post 3</a></li>
+            <?php
+            require 'config.php';
+            $conn = mysqli_connect($server,$user,$pass,$db_name);
+            if(!$conn){
+                die('CONNECTION ERROR: ' . mysqli_connect_error());
+            }else{
+                $sql = 'select title from blog';
+                $result = mysqli_query($conn,$sql);
+                $titles = mysqli_fetch_all($result); 
+            ?>
+            <li><a href="#recent-posts"><?=$titles[0][0];?></a></li>
+            <li><a href="#recent-posts"><?=$titles[1][0];?></a></li>
+            <li><a href="#recent-posts"><?=$titles[2][0];?></a></li>
+            <?php } ?>
         </ul>
     </aside>
 </div>
