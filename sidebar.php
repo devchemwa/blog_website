@@ -24,8 +24,6 @@
                 $titles = mysqli_fetch_all($result); 
             ?>
             <li><a href="#recent-posts"><?=$titles[0][0];?></a></li>
-            <li><a href="#recent-posts"><?=$titles[1][0];?></a></li>
-            <li><a href="#recent-posts"><?=$titles[2][0];?></a></li>
             <?php } ?>
         </ul>
     </aside>

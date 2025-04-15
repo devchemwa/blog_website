@@ -13,9 +13,8 @@ $blog = mysqli_fetch_all($result);
      <?php for($i= 0;$i<count($blog);$i++){ ?>
      <br>
     <p><strong><?=$blog[$i][0];?></strong></p>
-    <p><i><?=$blog[$i][1];?></i></p>
+    <p><i><h5><?=$blog[$i][1];?></h5></i>  <i><h6><?=$blog[$i][3];?></h6></i></p>
     <p style="text-wrap:wrap;"><?=$blog[$i][2];?></p>
-    <p><i><?=$blog[$i][3];?></i></p>
     <?php } ?>
     </div>
 </div>

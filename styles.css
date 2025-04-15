@@ -49,6 +49,7 @@ body{
     padding: 10px 20px;
     background-color: #f3bd0e;
     height: fit-content;
+    width: fixed;
     margin-top: 60px;
     margin-left: 10px;
     border-radius: 10px;
@@ -181,12 +182,7 @@ form input{
 }
 form input:hover{
     border: 2px solid #000;
-    font-size: 1.5rem;
     border-radius: 5px;
-}
-#message{
-    height: 200px;
-    text-align: start;
 }
 #submit{
     width: 200px;
@@ -261,4 +257,7 @@ form input:hover{
     width: 80%;
     height: fit-content;
     margin: 0 auto;
+}
+textarea{
+    resize: none;
 }
