@@ -22,7 +22,7 @@ if(!$conn){
         <th>Feedback Message</th>
     </thead>
     <?php for($i = 0; $i < count($feedback); $i++){ ?>
-    <tbody>
+    <tbody style="text-align: center;">
             <td><?= $feedback[$i][0]; ?></td>
             <td><?= $feedback[$i][1];?></td>
             <td><?= $feedback[$i][2];?></td>

@@ -26,8 +26,15 @@
          <td><?=$blogs[$i][0] ?></td>
          <td><?=$blogs[$i][1] ?></td>
          <td><?=$blogs[$i][2] ?></td>
+         <td><input type="submit" name="delete_blog">Delete Blog</>
+                  <input type="submit" name="edit_blog">Edit Blog</>
+         </td>
    </tbody>
-   <?php } ?>
+   <?php } 
+            if(isset($_POST['delete_blog'])){
+               $query = 'delete from ';
+            } 
+   ?>
 </table>
 </div>
 <?php         } 
