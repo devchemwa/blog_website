@@ -14,20 +14,21 @@
             $search = htmlspecialchars(string: $_POST['search']);
             $query = "select title, author, content from blog where author = '$search';";
             $results = mysqli_query(mysql: $conn, query: $query);
-            $blogs = mysqli_fetch_all(result: $results);
+            $blogs = mysqli_fetch_all(result: $results, mode: MYSQLI_ASSOC);
             if ($blogs == true) {
                 for ($i = 0; $i < count(value: $blogs); $i++) { ?>
                     <div class="blog-details">
                         <div class="searchResults">
-                        <p><b><?= $blogs[$i][0]; ?></b></p>
-                        <p><i><?=$blogs[$i][1]; ?></i></p>
-                        <p><?=$blogs[$i][2];?></p>
+                        <p><b><?= $blogs[$i]['title']; ?></b></p>
+                        <p><i><?=$blogs[$i]['author']; ?></i></p>
+                        <p><?=$blogs[$i]['content'];?></p>
                         </div>
                     </div>
+                    <?php } ?>
                     <?php include 'footer.php'; ?>
                 </body>
                 </html>
-<?php }
+<?php
             } else {
                 echo "No Records Found" . "<br>";
             }
