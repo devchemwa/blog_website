@@ -11,30 +11,31 @@
     }else{
             $query = "select title, author, created_at from blog;";
             $results = mysqli_query(mysql: $conn, query: $query);
-            $blogs = mysqli_fetch_all(result: $results);
+            $blogs = mysqli_fetch_all(result: $results, mode: MYSQLI_ASSOC);
             if($blogs == true){
 ?>
 <div class="blog-about-container">
 <table border="1">
    <thead>
+      <tr>
       <th>Blog Title</th>
       <th>Author</th>
       <th>Created At</th>
+      </tr>
    </thead>
-   <?php for($i = 0; $i < count(value: $blogs); $i++){  ?>
    <tbody>
-         <td><?=$blogs[$i][0] ?></td>
-         <td><?=$blogs[$i][1] ?></td>
-         <td><?=$blogs[$i][2] ?></td>
-         <td><input type="submit" name="delete_blog">Delete Blog</>
-                  <input type="submit" name="edit_blog">Edit Blog</>
-         </td>
-   </tbody>
-   <?php } 
+   <?php for($i = 0; $i < count(value: $blogs); $i++){  ?>
+      <tr>
+         <td><?=$blogs[$i]['title'];?></td>
+         <td><?=$blogs[$i]['author'];?></td>
+         <td><?=$blogs[$i]['created_at'];?></td>
+         </tr>
+         <?php } 
             if(isset($_POST['delete_blog'])){
                $query = 'delete from ';
             } 
    ?>
+   </tbody>
 </table>
 </div>
 <?php         } 
