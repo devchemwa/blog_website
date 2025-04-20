@@ -6,7 +6,7 @@
     }else{
             $query = "select name, about from author_details;";
             $results = mysqli_query(mysql: $conn, query: $query);
-            $blogs = mysqli_fetch_all(result: $results);
+            $blogs = mysqli_fetch_all(result: $results, mode: MYSQLI_ASSOC);
             if($blogs == true){
 ?>
 <div class="blog-about-container">
@@ -17,8 +17,8 @@
    </thead>
    <?php for($i = 0; $i < count(value: $blogs); $i++){  ?>
    <tbody style="text-align: center;">
-         <td><?=$blogs[$i][0] ?></td>
-         <td><?=$blogs[$i][1] ?></td>
+         <td><?=$blogs[$i]['name'];?></td>
+         <td><?=$blogs[$i]['about'];?></td>
    </tbody>
    <?php } ?>
 </table>
