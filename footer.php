@@ -11,7 +11,6 @@
             <li><a href="post.php">POST</a></li>
             <li><a href="about.php">ABOUT</a></li>
             <li><a href="contact.php">CONTACT</a></li>
-            <li><a href="user-verify.html.php">login</a></li>
             </ul>
         </div>
         <div id="socials">

@@ -13,7 +13,13 @@ if(!$conn){
 </form>
 </div>
 <?php 
-
+         if(isset($_POST['verify-user'])){
+            $name = $_POST['name'];
+            $password = $_POST['password'];
+            $sql = mysqli_query($conn, "select name,user_password from users where name = '$name'");
+            $result = mysqli_fetch_all($sql);
+            print_r($result);
+         }
 
 ?>
 

@@ -4,6 +4,7 @@
     </div>
     <div class="nav-links">
         <ul>
+        <li><a href="user-verify.php">login</a></li>
            <li style="color:#fff;">MY PERSONAL BLOG</li>
             <li><a href="contact.php">CONTACT</a></li>
             <li><a href="post.php" >POST</a></li>
