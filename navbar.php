@@ -10,5 +10,5 @@
             <li><a href="about.php">ABOUT</a></li>
             <li><a href="index.php">HOME</a></li>
         </ul>
-    </div>
+</div>
 </div>

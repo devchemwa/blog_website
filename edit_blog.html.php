@@ -9,7 +9,7 @@ if(!$conn){
 ?>
 <form action="edit_blog.html.php" method="post">
     <?php for($i = 0; $i < count($blog); $i++){ ?>
-    <p><input type="hidden" name="blogID" id="blogID" value="<?=$blog[$i]['blogID'];?>"></p>
+    <p><input type="number" name="blogID" id="blogID" value="<?=$blog[$i]['blogID'];?>"></p>
     <p><input type="text" name="title" id="title" value="<?=$blog[$i]['title'];?>"></p>
     <p><input type="text" name="author" id="author" name="author" value="<?=$blog[$i]['author'];?>"></p>
     <textarea name="content" id="content"><?=$blog[$i]['content'];?></textarea>
